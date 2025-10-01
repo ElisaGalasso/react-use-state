@@ -1,5 +1,7 @@
 import { useState } from "react"
 import languages from "../data/Languages";
+import AccordionButton from "./AccordionButton";
+import AccordionCard from "./AccordionCard";
 
 export default function AppAccordion() {
 
@@ -15,22 +17,13 @@ export default function AppAccordion() {
     return (
 
         <div className="languages">
-            {languages.map(language =>
-                <div className="language" key={language.id}>
-                    <button onClick={handleClick} data-id={language.id}>{language.title}</button>
-                    {
-                        currentAccordion == language.id &&
-                        <>
-                            <div className="card-header">
-                                {language.title}
-                            </div>
-                            <div className="card-body">
-                                {language.description}
-                            </div>
-                        </>
-                    }
-                </div>
-            )}
+            <AccordionButton currentAccordion={currentAccordion}
+                handleClick={handleClick}>
+
+            </AccordionButton>
+            <AccordionCard currentAccordion={currentAccordion}>
+
+            </AccordionCard>
 
         </div>
     )
