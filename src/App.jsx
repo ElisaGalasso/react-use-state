@@ -1,10 +1,13 @@
+import AppHeader from "./components/AppHeader";
+import AppMain from "./components/AppMain";
 
 
 function App() {
 
   return (
     <>
-      <header>Learn Web development</header>
+      <AppHeader></AppHeader>
+      <AppMain></AppMain>
     </>
   )
 }
